@@ -1,0 +1,9 @@
+/* We don't want purgecss to touch this, which mostly includes Normalize.css */
+/* purgecss start ignore */
+@tailwind base;
+/* purgecss end ignore */
+
+@tailwind components;
+/* Add all custom component classes here */
+
+@tailwind utilities;
