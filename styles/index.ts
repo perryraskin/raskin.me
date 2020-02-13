@@ -13,10 +13,10 @@ export const breakpoints = {
   
   export const colors = {
     landingPage: {
-      welcomeText: 'rgba(0,0,0,0.35)',
+      welcomeText: '#9FDBFF',
       foreground: '#fff',
       hoverForeground: '#E1E1E1',
-      infolabel: '#01e459',
+      infolabel: '#9FDBFF',
     },
     background: 'whitesmoke',
     gray: '#333',

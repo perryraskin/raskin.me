@@ -139,18 +139,18 @@ const LandingComponent: NextPage<LandingComponentProps> = ({
       <LandingContainer>
         <Container>
           <div className="container">
-            <WelcomeText>HELLO AND WELCOME.</WelcomeText>
-            <Title>I'm {name}</Title>
+            <WelcomeText>THANKS FOR STOPPING BY</WelcomeText>
+            <Title>{name}</Title>
             <InfoLabel>{infoLabel}</InfoLabel>
             <ButtonContainer>
               <Button
                 className="button"
                 href="#description"
               >
-                READ MORE
+                BLOG
               </Button>
               <Button className="button" href=""
-                >DOWNLOAD CV
+                >RESUME
               </Button>
             </ButtonContainer>
             <LinkContainer>

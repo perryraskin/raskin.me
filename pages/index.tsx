@@ -45,7 +45,7 @@ const Background = glamorous.div({
 const Home: NextPage<HomeProps> = ({}) => {
   return (
     <div
-      className="w-screen h-screen bg-gray-900"
+      className="w-screen h-screen bg-gray-800"
     >
       <Background/>
         <Container>
