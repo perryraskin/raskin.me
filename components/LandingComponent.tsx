@@ -146,7 +146,7 @@ const LandingComponent: NextPage<LandingComponentProps> = ({
             <ButtonContainer>
               <Button
                 className="button"
-                href="https://raskin.me/blog"
+                href="https://blog.raskin.me"
               >
                 BLOG
               </Button>
