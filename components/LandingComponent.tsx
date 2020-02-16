@@ -152,7 +152,7 @@ const LandingComponent: NextPage<LandingComponentProps> = ({
               </Button>
               <Button 
                 className="button" 
-                href="https://drive.google.com/file/d/1BATRuyYAqfOKhQfsuHV-QRfgwxOqc5wa/view?usp=sharing"
+                href="https://drive.google.com/file/d/1sGq860jFX91lnDh7BQwq_dR2dfk0GyRy/view?usp=sharing"
                 >RESUME
               </Button>
             </ButtonContainer>
