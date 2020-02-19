@@ -145,10 +145,10 @@ const LandingComponent: NextPage<LandingComponentProps> = ({
             <InfoLabel>{infoLabel}</InfoLabel>
             <ButtonContainer>
               <Button
-                className="button"
+                className="button" hidden
                 href="https://blog.raskin.me"
               >
-                BLOG
+                BLOG 
               </Button>
               <Button 
                 className="button" 
