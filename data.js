@@ -1,7 +1,7 @@
 export const data = {
     "basics": {
       "name": "Perry Raskin",
-      "label": "Software Engineer",
+      "label": "Full stacking. Side projecting. Learning.",
       "picture": "https://avatars1.githubusercontent.com/u/17967465?s=460&v=4",
       "email": "perry@raskin.me",
       "phone": "",
@@ -23,7 +23,7 @@ export const data = {
         {
           "network": "LinkedIn",
           "username": "perryraskin",
-          "url": "https://www.linkedin.com/in/perryraskin"
+          "url": "https://linkedin.com/in/perryraskin"
         }
       ]
     },

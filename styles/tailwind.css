@@ -3,6 +3,25 @@
 @tailwind base;
 /* purgecss end ignore */
 
+  
+p a:hover {
+  @apply text-black;
+  transition: border-color 0.25s ease;
+}
+
+.mode-dark p a {
+  @apply text-gray-100;
+}
+
+.mode-dark p a:hover {
+  @apply text-white;
+}
+
+.mode-dark h1,
+.mode-dark h2 {
+  @apply border-gray-700;
+}
+
 @tailwind components;
 /* Add all custom component classes here */
 
