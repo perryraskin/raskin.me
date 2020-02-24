@@ -5,7 +5,11 @@ import { data } from '../data.js';
 
 interface IndexProps {
   userAgent: string;
-  data: Object;
+  data: DataBasics;
+}
+
+interface DataBasics {
+  basics: Object;
 }
 
 const Index: NextPage<IndexProps> = ({}) => {

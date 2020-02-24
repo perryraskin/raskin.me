@@ -8,7 +8,12 @@ import { data } from '../data.js';
 
 interface HomeProps {
   userAgent?: string;
-  data: any;
+  data: UserInfo;
+}
+
+interface UserInfo {
+  name: string;
+  label: string;
 }
 
 const Home: NextPage<HomeProps> = ({
@@ -22,7 +27,7 @@ const Home: NextPage<HomeProps> = ({
         Thanks for stopping by! 👋
       </p>
       <h2 className="text-4xl md:text-6xl leading-tight font-bold dark:text-neutral-10 mb-8 border-b-0">
-        I’m {data.name}. {data.label}
+        I’m Perry Raskin. Full stacking. Side projecting. Learning.
       </h2>
       <Button
         text=""
