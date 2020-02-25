@@ -23,7 +23,7 @@ const Home: NextPage<HomeProps> = ({
   return (
     <Layout>
       <Section>
-      <p className="text-gray-600 dark:text-neutral-300 text-4xl">
+      <p className="text-gray-600 dark:text-neutral-300 text-2xl md:text-4xl">
         Thanks for stopping by! 👋
       </p>
       <h2 className="text-4xl md:text-6xl leading-tight font-bold dark:text-neutral-10 mb-8 border-b-0">
