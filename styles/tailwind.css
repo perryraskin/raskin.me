@@ -3,6 +3,50 @@
 @tailwind base;
 /* purgecss end ignore */
 
+/* No line height */
+.leading-0 {
+  line-height: 0;
+}
+
+/* Smaller text tracking */
+.tracking-p {
+  letter-spacing: 0.25px;
+}
+
+/* Measure is limited to ~66 characters */
+.measure {
+  max-width: 30em;
+}
+
+/* Measure is limited to ~80 characters */
+.measure-wide {
+  max-width: 34em;
+}
+
+/* Measure is limited to ~45 characters */
+.measure-narrow {
+  max-width: 20em;
+}
+
+/* Smooth transition to dark mode */
+.dark-transition {
+  transition: background 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    color 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+/* Custom reading bar */
+.h-05 {
+  height: 0.125rem;
+}
+
+.mb-rb {
+  margin-bottom: 3.9rem;
+}
+
+.bottom-16 {
+  bottom: 4rem;
+}
+
 /* No button selection on click */
 .no-select {
   -webkit-touch-callout: none;
@@ -18,6 +62,9 @@ body {
   @apply text-xl;
 }
 
+p {
+  @apply mb-6 text-xl leading-snug tracking-p;
+}
 
 .link-underline {
   @apply -mb-2 border-b-2;
@@ -47,12 +94,6 @@ p a {
 p a:hover {
   @apply text-black border-blue-500;
   transition: border-color 0.25s ease;
-}
-
-/* Smooth transition to dark mode */
-.dark-transition {
-  transition: background 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    color 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .mode-dark p a {
