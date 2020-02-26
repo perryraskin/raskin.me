@@ -2,8 +2,6 @@ import App from 'next/app';
 import * as React from 'react';
 import '../styles/tailwind.css';
 
-import Head from 'next/head';
-
 interface AppState {
   // state variables types go here
 }
@@ -27,12 +25,7 @@ class MyApp extends App<{}, {}, AppState> {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <div>
-        <Head>
-          <link rel="shortcut icon" href="../assets/favicon.ico" />
-        </Head>
-        <Component {...pageProps} />
-      </div>
+      <Component {...pageProps} />
     );
   }
 }
