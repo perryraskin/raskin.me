@@ -76,7 +76,7 @@ const About: NextPage<AboutProps> = ({
         </p>
       </Section>
       <Section>
-        <h2>All Things Me</h2>
+        <h2>My Things</h2>
         <div className="-my-2">
           {interests.like.map(el => (
             <Tag text={el} />

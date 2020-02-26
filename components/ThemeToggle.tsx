@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-
 import { Moon, Sun } from "react-feather";
 
 interface ThemeToggleProps {

@@ -41,7 +41,7 @@ const Header: NextPage<HeaderProps> = ({}) => {
             ].map(link => (
               <Link href={link.route}>
                 <a
-                  className="px-4 py-2 mr-2 text-2xl rounded hover:bg-gray-300 dark-hover:bg-gray-800"
+                  className="px-4 py-2 mr-2 text-2xl rounded hover:bg-gray-300 dark-hover:bg-neutral-800"
                   key={link.title}
                   href={link.route}
                 >
@@ -50,7 +50,7 @@ const Header: NextPage<HeaderProps> = ({}) => {
               </Link>
             ))}
           </nav>
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
         </div>
       </Section>
     </header>
