@@ -5,7 +5,7 @@ import { data } from '../data.js';
 
 interface IndexProps {
   userAgent: string;
-  data: DataBasics;
+  data?: DataBasics;
 }
 
 interface DataBasics {
@@ -14,8 +14,15 @@ interface DataBasics {
 
 const Index: NextPage<IndexProps> = ({}) => {
   return (
-    <Home data={data.basics}/>
+    <Home/>
   );
 };
+
+Index.getInitialProps = async ctx => {
+  const { req } = ctx;
+
+  const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
+  return { userAgent };
+}
 
 export default Index;

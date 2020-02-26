@@ -8,7 +8,7 @@ import { data } from '../data.js';
 
 interface HomeProps {
   userAgent?: string;
-  data: UserInfo;
+  data?: UserInfo;
 }
 
 interface UserInfo {
