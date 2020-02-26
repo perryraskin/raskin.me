@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import Head from 'next/head';
 
 import Home from './home'
 import { data } from '../data.js';
@@ -15,12 +14,7 @@ interface DataBasics {
 
 const Index: NextPage<IndexProps> = ({}) => {
   return (
-    <div>
-      <Head>
-        <link rel="shortcut icon" href="/favicon.ico" />
-      </Head>
-      <Home/>
-    </div>
+    <Home/>
   );
 };
 
