@@ -38,7 +38,7 @@ const Home: NextPage<HomeProps> = ({
       <Button
         text=""
         icon={<GitHub/>}
-        to="https://github.com/perryraskin?tab=repositories"
+        to="https://github.com/perryraskin"
         extend="bg-black text-white"
       />&nbsp;&nbsp;&nbsp;
       <Button

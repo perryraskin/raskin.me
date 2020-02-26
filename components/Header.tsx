@@ -13,11 +13,17 @@ const Header: NextPage<HeaderProps> = ({}) => {
   return (
     <header className="hidden lg:block">
       <Section>
-        {/* <div className="mt-10">
+        <div className="mt-10">
           <Link href="/">
-            <span className="text-4xl font-bold">Perry Raskin</span>"
+            <a href="/">
+              <img 
+                src="https://s3.amazonaws.com/s3.raskin.me/images/pr-logo-navy.png"
+                width="250"
+              >
+              </img>
+            </a>
           </Link>
-        </div> */}
+        </div>
         <div
           className="flex items-center justify-between pb-6 my-6 border-b-2 border-blue-400">
           <nav className="-ml-4">
