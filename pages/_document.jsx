@@ -12,6 +12,7 @@ class MyDocument extends Document {
         <Head>
           {/* Favicons */}
           <link rel='icon' href='/icon/favicon.ico' type='image/x-icon' />
+          <link rel="apple-touch-icon" href="/image/apple-touch-icon.png"></link>
         </Head>
         <body>
           <Main />
