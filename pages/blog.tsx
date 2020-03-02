@@ -57,7 +57,7 @@ const Blog: NextPage<BlogProps> = ({
               <BlogPostCard
                 title={title}
                 subtitle={subtitle}
-                timeToRead="0"
+                timeToRead="2"
                 slug={`/blog/${slug}`}
                 date={reformatDate(date)}
               />
