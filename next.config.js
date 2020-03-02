@@ -14,6 +14,10 @@ const nextConfiguration = {
   },
   webpack: (config, { isServer }) => {
     config.plugins.push(new webpack.EnvironmentPlugin(localEnv));
+    config.module.rules.push({
+      test: /\.md$/,
+      use: 'raw-loader',
+    })
 
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {
