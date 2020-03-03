@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Head from 'next/head';
 import matter from 'gray-matter';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
@@ -69,6 +70,10 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
   var reactElement = converter.convert(markdownBody);
   return (
     <Layout>
+      <Head>
+        <meta name="description" content="About me, my projects, and my blog"/>
+        <title>{frontmatter.title}</title>
+      </Head>
       <Section>
         <article className="mb-10 markdown">
           <header>
