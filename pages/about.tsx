@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
 import Tag from '../components/Tag';
+import Head from 'next/head';
 
 import { data } from '../data.js';
 
@@ -50,6 +51,10 @@ const About: NextPage<AboutProps> = ({
 }) => {
   return (
     <Layout>
+      <Head>
+        <meta name="description" content="About me, my projects, and my blog"/>
+        <title>Perry Raskin | About</title>
+      </Head>
       <Section>
         <h1>About Me</h1>
         <div className="flex flex-wrap">

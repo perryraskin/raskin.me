@@ -17,9 +17,8 @@ const Index: NextPage<IndexProps> = ({}) => {
   return (
     <div>
       <Head>
-        <meta name="personal website" content="About me, my projects, and my blog"/>
-        <title>Perry Raskin</title>
-        <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.css" />
+        <meta name="description" content="About me, my projects, and my blog"/>
+        <title>Perry Raskin | Home</title>
       </Head>
       <Home/>
     </div>

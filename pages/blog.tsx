@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Head from 'next/head';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
 
@@ -36,6 +37,10 @@ const Blog: NextPage<BlogProps> = ({
 }) => {
   return(
     <Layout>
+      <Head>
+        <meta name="description" content="About me, my projects, and my blog"/>
+        <title>Perry Raskin | Blog</title>
+      </Head>
       <Section>
         <h1>Blog</h1>
         <p>
