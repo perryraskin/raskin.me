@@ -97,7 +97,7 @@ BlogTemplate.getInitialProps = async ctx => {
   // ctx contains the query param
   const { slug } = ctx.query
   // grab the file in the posts dir based on the slug
-  const content = await import(`../../posts/${slug}.md`)
+  const content = await import(`../../posts/${slug}.md`);
   // also grab the config file so we can pass down siteTitle
   //const config = await import(`../../data/config.json`)
   //gray-matter parses the yaml frontmatter from the md body

@@ -3,17 +3,20 @@ const optimizedImages = require('next-optimized-images');
 const withPlugins = require('next-compose-plugins');
 const { parsed: localEnv } = require('dotenv').config();
 const webpack = require('webpack');
+const sitemap = require('nextjs-sitemap-generator'); 
 
 const path = require("path");
 const glob = require("glob");
 const fs = require('fs');
 
 const nextConfiguration = {
+  target: 'serverless',
   env: {
     // Put any public environment variables here
   },
   webpack: (config, { isServer }) => {
     config.plugins.push(new webpack.EnvironmentPlugin(localEnv));
+    require('./scripts/generate-sitemap');
     config.module.rules.push({
       test: /\.md$/,
       use: 'raw-loader',
@@ -63,6 +66,12 @@ const nextConfiguration = {
 const optImgConfiguration = {
   optimizeImagesInDev: false
 };
+
+// sitemap({  
+//   baseUrl: 'raskin.me',  
+//   pagesDirectory: __dirname + "/pages",  
+//   targetDirectory : 'static/'  
+// });
 
 module.exports = withPlugins([
   [withCSS, nextConfiguration],

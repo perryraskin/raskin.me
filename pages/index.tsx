@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Head from 'next/head';
 
 import Home from './home'
 import { data } from '../data.js';
@@ -14,7 +15,14 @@ interface DataBasics {
 
 const Index: NextPage<IndexProps> = ({}) => {
   return (
-    <Home/>
+    <div>
+      <Head>
+        <meta name="personal website" content="About me, my projects, and my blog"/>
+        <title>Perry Raskin</title>
+        <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.css" />
+      </Head>
+      <Home/>
+    </div>
   );
 };
 
