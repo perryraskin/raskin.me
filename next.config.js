@@ -10,7 +10,6 @@ const glob = require("glob");
 const fs = require('fs');
 
 const nextConfiguration = {
-  target: 'serverless',
   env: {
     // Put any public environment variables here
   },
