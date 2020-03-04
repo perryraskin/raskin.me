@@ -17,6 +17,7 @@ If this is new to you, there are tutorials that explain how this works (e.g. [Ne
 
 For a visual, below is what the `BlogPostTemplate` component looked like before I did anything fancy. I will only include the relevant code to keep it short, but feel free to view the [entire file](https://github.com/perryraskin/raskin.me/blob/master/pages/blog/%5Bslug%5D.tsx) in the repo.
 
+```
         <article className="mb-10 markdown">
           <header>
           	<h1 className="text-5xl">{frontmatter.title}</h1>
@@ -30,6 +31,7 @@ For a visual, below is what the `BlogPostTemplate` component looked like before 
             />
           </div>
         </article>
+```
 
 Notice that this code simply applies a title, date, and the contents of the `.md` file. By default, inline code and code blocks were not nicely styled, and of course I wasn't satisfied with that. Luckily, `react-markdown` takes an optional parameter called `renderers` where we can provide a custom style to HTML tags of our choosing. This is where it got confusing - I had to dive into the [source code](https://github.com/rexxars/react-markdown/blob/master/src/renderers.js) to figure out what exactly I was supposed to pass to it.
 
@@ -37,11 +39,14 @@ Notice that this code simply applies a title, date, and the contents of the `.md
 
 First and foremost, make sure you have your imports for highlight.js. You can choose any theme from the `/styles` folder that's provided.
 
+```
     import Highlight from 'react-highlight';
     import '../../node_modules/highlight.js/styles/nord.css';
+```
 
 After **a lot** of trial and error, I realized I needed to create a custom component to pass to `renderers`. I'm sure there are other ways to do this, but this made the most sense to me, and it worked quite nicely.
 
+```
     interface CodeBlockProps {
       value: any;
     }
@@ -56,14 +61,17 @@ After **a lot** of trial and error, I realized I needed to create a custom compo
         </div>
       )
     }
+```
 
 Since the `code` parameter of `renderers` requires a component with a `<code>` element that's inside of a `<pre>` element, this is what I came up with. `<Hightlight />` includes all of that, so I added it inside this component, and passed the `value` (the actual code) as props.
 
+```
     <ReactMarkdown 
       source={markdownBody}
       renderers={{
       	code: CodeBlock
       }}
     />
+```
 
 Then, I simply passed the `CodeBlock` component to `code` and finally it worked!
