@@ -27,6 +27,7 @@
     "globby": "^11.0.0",
     "gray-matter": "^4.0.2",
     "highlight.js": "^9.18.1",
+    "hyvor-talk-react": "^1.0.1",
     "imagemin-mozjpeg": "^8.0.0",
     "moment": "^2.24.0",
     "next": "^9.2.1",
