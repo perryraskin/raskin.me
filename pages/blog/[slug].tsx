@@ -51,14 +51,7 @@ const Code = styled.code`
 `;
 
 const inlineCode = styled.code.attrs({
-  className: "bg-white text-primary-900 text-base my-2 py-2 pl-2 pr-2 rounded-lg shadow-xs"
-})``;
-
-const code = styled.code.attrs({
-})``;
-
-const Pre = styled.pre.attrs({
-  className: "bg-white text-primary-900 my-6 py-4 pl-12 pr-6 rounded-lg shadow"
+  className: "bg-gray-300 text-primary-900 text-base my-0 py-0 pl-2 pr-2 rounded-lg shadow-xs"
 })``;
 
 interface CodeBlockProps {
@@ -103,6 +96,7 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
             <ReactMarkdown 
               source={markdownBody}
               renderers={{
+                inlineCode: inlineCode,
                 code: CodeBlock
               }}
             />
