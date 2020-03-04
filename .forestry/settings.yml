@@ -9,7 +9,7 @@ sections:
   label: Posts
   create: all
   match: "**/*"
-upload_dir: ''
+upload_dir: raskin.me/images
 public_path: https://res.cloudinary.com/raskin-me/image/upload
 front_matter_path: ''
 use_front_matter_path: 
