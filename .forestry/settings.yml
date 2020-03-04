@@ -9,7 +9,7 @@ sections:
   label: Posts
   create: all
   match: "**/*"
-upload_dir: ''
+upload_dir: images
 public_path: http://s3.amazonaws.com/s3.raskin.me
 front_matter_path: ''
 use_front_matter_path: 
