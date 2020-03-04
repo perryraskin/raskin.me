@@ -33,7 +33,7 @@ For a visual, below is what the `BlogPostTemplate` component looked like before 
 </article>
 ```
 
-Notice that this code simply applies a title, date, and the contents of the `.md` file. By default, inline code and code blocks were not nicely styled, and of course I wasn't satisfied with that. Luckily, `react-markdown` takes an optional parameter called `renderers` where we can provide a custom style to HTML tags of our choosing. This is where it got confusing - I had to dive into the [source code](https://github.com/rexxars/react-markdown/blob/master/src/renderers.js) to figure out what exactly I was supposed to pass to it.
+Notice that this code simply applies a title, date, and the contents of the `.md` file. By default, inline code and code blocks were not nicely styled, and of course I wasn't satisfied with that. Luckily, `react-markdown` takes an optional parameter called `renderers` where we can provide a custom style to HTML tags of our choosing. This is where it got confusing - I had to dive into the [source code](https://github.com/rexxars/react-markdown/blob/master/src/renderers.js) to figure out what exactly I needed to pass to it.
 
 ## The CodeBlock Component
 
