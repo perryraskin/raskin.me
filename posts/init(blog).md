@@ -1,6 +1,6 @@
 ---
 title: "init(blog)"
-date: "2020-03-01"
+date: "03/01/2020"
 subtitle: "After much procrastination, I finally started a personal blog"
 ---
 
