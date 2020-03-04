@@ -11,3 +11,5 @@ fields:
 - type: text
   name: subtitle
   label: subtitle
+pages:
+- posts/get-highlight-js-working-beautifully-in-your-next-js-markdown-blog.md
