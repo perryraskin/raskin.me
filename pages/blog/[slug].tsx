@@ -6,7 +6,6 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import Highlight from 'react-highlight';
-import '../../node_modules/highlight.js/styles/nord.css';
 
 import Layout from '../../components/Layout';
 import Section from '../../components/Section';
@@ -15,6 +14,7 @@ import { reformatDate } from '../blog';
 
 import "../../styles/prism-theme.css";
 import "../../styles/markdown.css";
+import "../../styles/nord.css";
 
 interface BlogTemplateProps {
   result: BlogPost;
@@ -83,7 +83,6 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
       <Head>
         <meta name="description" content={frontmatter.subtitle}/>
         <title>{frontmatter.title}</title>
-        <link rel="stylesheet" href="../../node_modules/highlight.js/styles/nord.css"></link>
       </Head>
       <Section>
         <article className="mb-10 markdown">
