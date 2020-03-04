@@ -1,5 +1,5 @@
 ---
-title: Get highlight.js working beautifully in your Next.js Markdown blog
+title: Get highlight.js working beautifully in your Next.js blog
 date: 2020-03-04T05:00:00Z
 subtitle: After some trial and error, I implemented a custom styled code block using
   TailwindCSS
