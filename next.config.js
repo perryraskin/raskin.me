@@ -9,6 +9,8 @@ const path = require("path");
 const glob = require("glob");
 const fs = require('fs');
 
+const globby = require('globby');
+
 const nextConfiguration = {
   env: {
     // Put any public environment variables here
@@ -56,7 +58,12 @@ const nextConfiguration = {
     }
 
     // ***** Dynamic Pages *****
-    // https://nextjs.org/learn/excel/static-html-export
+    // posts array
+    const posts = await globby(['posts/*.md']);
+    posts.map((post) => {
+      const slug = post.replace('posts/', '').replace('.md', '');
+      paths[`/blog/${slug}`] = { page: '/blog/[slug]', query: { handle: slug }}
+    });
 
     return paths;
   }

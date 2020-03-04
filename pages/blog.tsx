@@ -60,6 +60,7 @@ const Blog: NextPage<BlogProps> = ({
 
             return (
               <BlogPostCard
+                key={slug}
                 title={title}
                 subtitle={subtitle}
                 timeToRead="2"

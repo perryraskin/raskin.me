@@ -45,7 +45,7 @@ const Header: NextPage<HeaderProps> = ({}) => {
                 title: `Blog`
               }
             ].map(link => (
-              <Link href={link.route}>
+              <Link key={link.route} href={link.route}>
                 <a
                   className="px-4 py-2 mr-2 text-2xl rounded hover:bg-gray-300 dark-hover:bg-neutral-800"
                   key={link.title}

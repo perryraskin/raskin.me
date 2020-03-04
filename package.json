@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start"
   },
   "keywords": [],
@@ -24,10 +24,12 @@
     "globby": "^11.0.0",
     "gray-matter": "^4.0.2",
     "imagemin-mozjpeg": "^8.0.0",
+    "moment": "^2.24.0",
     "next": "^9.2.1",
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.5.4",
     "nextjs-sitemap-generator": "^0.5.0",
+    "nookies": "^2.0.8",
     "postcss-cli": "^7.1.0",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
@@ -39,6 +41,7 @@
     "react-showdown": "^1.6.0",
     "styled-components": "^5.0.1",
     "tailwindcss": "^1.2.0",
+    "tinacms": "^0.14.0",
     "use-light-switch": "^1.0.1"
   },
   "devDependencies": {

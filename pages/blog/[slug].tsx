@@ -3,6 +3,7 @@ import Head from 'next/head';
 import matter from 'gray-matter';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
+
 import Layout from '../../components/Layout';
 import Section from '../../components/Section';
 
