@@ -112,6 +112,7 @@
   @apply bg-gray-300 text-primary-900 text-base my-0 py-0 pl-2 pr-2 rounded-lg shadow-xs;
 }
 
+/* purgecss ignore */
 .markdown pre > code {
   @apply bg-neutral-900 text-primary-50 text-base my-2 py-2 pl-2 pr-2 rounded-lg shadow;
 }
