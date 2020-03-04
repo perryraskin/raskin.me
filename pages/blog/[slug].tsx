@@ -2,7 +2,11 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import matter from 'gray-matter';
 import styled from 'styled-components';
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
+
+import Highlight from 'react-highlight';
+import '../../node_modules/highlight.js/styles/nord.css'
 
 import Layout from '../../components/Layout';
 import Section from '../../components/Section';
@@ -46,19 +50,31 @@ const Code = styled.code`
   background: #f4f4f4;
 `;
 
-const Pre = styled.pre`
-  text-align: left;
-  margin: 1em 0;
-  padding: 0.5em;
-  overflow-x: auto;
-  border-radius: 3px;
+const inlineCode = styled.code.attrs({
+  className: "bg-white text-primary-900 text-base my-2 py-2 pl-2 pr-2 rounded-lg shadow-xs"
+})``;
 
-  & .token-line {
-    line-height: 1.3em;
-    height: 1.3em;
-  }
-  font-family: 'Courier New', Courier, monospace;
-`;
+const code = styled.code.attrs({
+})``;
+
+const Pre = styled.pre.attrs({
+  className: "bg-white text-primary-900 my-6 py-4 pl-12 pr-6 rounded-lg shadow"
+})``;
+
+interface CodeBlockProps {
+  value: any;
+}
+
+const codeBlock: NextPage<CodeBlockProps> = ({ value }) => {
+  return (
+    <div>
+      <Highlight>
+        {value}
+      </Highlight>
+      <br />
+    </div>
+  )
+}
 
 const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
   // data from getInitialProps
@@ -88,8 +104,9 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
               source={markdownBody}
               renderers={{
                 blockquote: Blockquote,
-                pre: Pre,
-                list: OrderedList
+                list: OrderedList,
+                inlineCode: inlineCode,
+                code: codeBlock
               }}
             />
           </div>
