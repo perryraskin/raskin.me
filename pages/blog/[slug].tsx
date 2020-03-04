@@ -88,7 +88,7 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
   return (
     <Layout>
       <Head>
-        <meta name="description" content="About me, my projects, and my blog"/>
+        <meta name="description" content={frontmatter.subtitle}/>
         <title>{frontmatter.title}</title>
       </Head>
       <Section>
