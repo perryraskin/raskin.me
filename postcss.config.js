@@ -12,7 +12,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   css: [
     './styles/tailwind.css'
   ],
-  whitelistPatterns: [/hl$/],
+  whitelistPatterns: [/$hl/],
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
 });
 
