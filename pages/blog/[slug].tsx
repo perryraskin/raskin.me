@@ -83,6 +83,7 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
       <Head>
         <meta name="description" content={frontmatter.subtitle}/>
         <title>{frontmatter.title}</title>
+        <link rel="stylesheet" href="../../node_modules/highlight.js/styles/nord.css"></link>
       </Head>
       <Section>
         <article className="mb-10 markdown">
@@ -96,7 +97,6 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
             <ReactMarkdown 
               source={markdownBody}
               renderers={{
-                inlineCode: inlineCode,
                 code: CodeBlock
               }}
             />
