@@ -10,6 +10,8 @@
  *   https://github.com/arcticicestudio/nord
  */
 
+/* purgecss start ignore */
+
 .hljs {
   display: block;
   overflow-x: auto;
@@ -307,3 +309,5 @@
 .yaml .hljs-meta {
   color: #D08770;
 }
+
+/* purgecss end ignore */
