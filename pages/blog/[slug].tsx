@@ -6,7 +6,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import Highlight from 'react-highlight';
-import '../../node_modules/highlight.js/styles/nord.css'
+import '../../node_modules/highlight.js/styles/nord.css';
 
 import Layout from '../../components/Layout';
 import Section from '../../components/Section';
@@ -65,7 +65,7 @@ interface CodeBlockProps {
   value: any;
 }
 
-const codeBlock: NextPage<CodeBlockProps> = ({ value }) => {
+const CodeBlock: NextPage<CodeBlockProps> = ({ value }) => {
   return (
     <div>
       <Highlight>
@@ -103,10 +103,7 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
             <ReactMarkdown 
               source={markdownBody}
               renderers={{
-                blockquote: Blockquote,
-                list: OrderedList,
-                inlineCode: inlineCode,
-                code: codeBlock
+                code: CodeBlock
               }}
             />
           </div>

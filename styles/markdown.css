@@ -109,7 +109,7 @@
 }
 
 .markdown code {
-  @apply bg-gray-300 text-primary-900 text-base my-2 py-2 pl-2 pr-2 rounded-lg shadow-xs;
+  @apply bg-gray-300 text-primary-900 text-base my-0 py-0 pl-2 pr-2 rounded-lg shadow-xs;
 }
 
 .markdown pre > code {
@@ -117,7 +117,7 @@
 }
 
 .mode-dark .markdown code {
-  @apply bg-neutral-800 text-primary-50 text-base my-2 py-2 pl-2 pr-2 rounded-lg shadow-xs;
+  @apply bg-neutral-700 text-primary-50 text-base my-0 py-0 pl-2 pr-2 rounded-lg shadow-xs;
 }
 
 .markdown li {
