@@ -17,7 +17,7 @@ If this is new to you, there are tutorials that explain how this works (e.g. [Ne
 
 For a visual, below is what the `BlogPostTemplate` component looked like before I did anything fancy. I will only include the relevant code to keep it short, but feel free to view the [entire file](https://github.com/perryraskin/raskin.me/blob/master/pages/blog/%5Bslug%5D.tsx) in the repo.
 
-```
+```javascript
 <article className="mb-10 markdown">
   <header>
     <h1 className="text-5xl">{frontmatter.title}</h1>
@@ -39,14 +39,14 @@ Notice that this code simply applies a title, date, and the contents of the `.md
 
 First and foremost, make sure you have your imports for highlight.js. You can choose any theme from the `/styles` folder that's provided.
 
-```
+```javascript
 import Highlight from 'react-highlight';
 import '../../node_modules/highlight.js/styles/nord.css';
 ```
 
 After **a lot** of trial and error, I realized I needed to create a custom component to pass to `renderers`. I'm sure there are other ways to do this, but this made the most sense to me, and it worked quite nicely.
 
-```
+```javascript
 interface CodeBlockProps {
   value: any;
 }
@@ -65,7 +65,7 @@ const CodeBlock: NextPage<CodeBlockProps> = ({ value }) => {
 
 Since the `code` parameter of `renderers` requires a component with a `<code>` element that's inside of a `<pre>` element, this is what I came up with. `<Hightlight />` includes all of that, so I added it inside this component, and passed the `value` (the actual code) as props.
 
-```
+```javascript
 <ReactMarkdown 
   source={markdownBody}
   renderers={{
@@ -74,4 +74,4 @@ Since the `code` parameter of `renderers` requires a component with a `<code>` e
 />
 ```
 
-Then, I simply passed the `CodeBlock` component to `code` and finally it worked!
+Then, I simply passed the `CodeBlock` component to `code` and finally it worked! Just be sure you don't have PurgeCSS stripping your highlight.js CSS, and you should be good to go.
