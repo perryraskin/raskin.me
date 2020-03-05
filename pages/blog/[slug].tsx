@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import styled from 'styled-components';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import Hyvor from '../../components/Hyvor';
 
 import Highlight from 'react-highlight';
 
@@ -115,6 +116,7 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
             />
           </div>
         </article>
+        <Hyvor websiteId={262} />
       </Section>
     </Layout>
   )
