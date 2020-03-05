@@ -2,6 +2,7 @@
 title: Beautify code in your Next.js blog
 date: 2020-03-04T05:00:00Z
 subtitle: After some trial and error, I styled custom code blocks using Highlight.js and  TailwindCSS
+socialImage: https://s3.amazonaws.com/s3.raskin.me/images/beautify-code-nextjs-social.jpg
 
 ---
 It definitely took me way too long to get code blocks correctly highlighted on my blog. Next.js seems to have less tutorials out there in general, especially for specific use cases like these. I hope to fix that, at least a little bit, with my own blog. As I experience issues and overcome each challenge, my plan is to write up a post about it. Here's #1!

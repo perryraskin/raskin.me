@@ -26,9 +26,11 @@ interface BlogPost {
 }
 
 interface Data {
+  url: string;
   title: string;
   date: string;
   subtitle: string;
+  socialImage: string;
 }
 
 const Blockquote = styled.blockquote.attrs({
@@ -81,8 +83,20 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
   return (
     <Layout>
       <Head>
+        {/* General tags */}
         <meta name="description" content={frontmatter.subtitle}/>
         <title>{frontmatter.title}</title>
+        {/* OpenGraph tags */}
+        <meta name="og:url" content={frontmatter.url} />
+        <meta name="og:title" content={frontmatter.title} />
+        <meta name="og:description" content={frontmatter.subtitle} />
+        <meta name="og:image" content={frontmatter.socialImage} />
+        <meta name="og:type" content="website" />
+        {/* Twitter Card tags */}
+        <meta name="twitter:title" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.subtitle} />
+        <meta name="twitter:image" content={frontmatter.socialImage} />
+        <meta name="twitter:card" content="summary" />
       </Head>
       <Section>
         <article className="mb-10 markdown">
@@ -108,21 +122,24 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
 
 BlogTemplate.getInitialProps = async ctx => {
   // ctx contains the query param
-  const { slug } = ctx.query
+  const { slug, handle } = ctx.query
+  // super weird that sometimes it's slug and sometimes it's handle
+  let blogPost = typeof slug === 'undefined' ? handle : slug
   // grab the file in the posts dir based on the slug
-  const content = await import(`../../posts/${slug}.md`);
+  const content = await import(`../../posts/${blogPost}.md`);
   // also grab the config file so we can pass down siteTitle
   //const config = await import(`../../data/config.json`)
   //gray-matter parses the yaml frontmatter from the md body
   const result = matter(content.default)
-  console.log("result:", result)
   return {
     result: {
       content: result.content,
       data: {
+        url: `https://raskin.me/blog/${blogPost}`,
         title: result.data.title,
         date: result.data.date,
-        subtitle: result.data.subtitle
+        subtitle: result.data.subtitle,
+        socialImage: result.data.socialImage
       }
     }
   }
