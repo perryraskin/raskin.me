@@ -32,6 +32,18 @@ export function reformatDate(fullDate: string) {
   return date.toLocaleString('en-US', { month: 'long', year: 'numeric', day: 'numeric' });
 }
 
+export function getReadTime(content: string) {
+  const wordsPerMinute = 200; // Average case.
+  let value = 1;
+  
+  let textLength = content.split(" ").length; // Split by words
+  if (textLength > 0){
+    value = Math.ceil(textLength / wordsPerMinute);
+  }
+
+  return value;
+}
+
 const Blog: NextPage<BlogProps> = ({
   posts
 }) => {
@@ -53,7 +65,7 @@ const Blog: NextPage<BlogProps> = ({
         <div className="flex flex-wrap -mx-2">
           {posts.map((post) => {
             const title = post.document.data.title;
-            //const timeToRead = post.timeToRead;
+            const timeToRead = getReadTime(post.document.content).toString();
             const subtitle = post.document.data.subtitle;
             const slug = post.slug;
             const date = post.document.data.date;
@@ -63,7 +75,7 @@ const Blog: NextPage<BlogProps> = ({
                 key={slug}
                 title={title}
                 subtitle={subtitle}
-                timeToRead="2"
+                timeToRead={timeToRead}
                 slug={`/blog/${slug}`}
                 date={reformatDate(date)}
               />
