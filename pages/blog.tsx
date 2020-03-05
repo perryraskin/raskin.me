@@ -117,7 +117,7 @@ Blog.getInitialProps = async => {
     // return all the posts
     return data
   })(require.context('../posts', true, /\.md$/));
-
+  
   return {
     posts: posts,
   }

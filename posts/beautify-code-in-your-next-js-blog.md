@@ -1,8 +1,7 @@
 ---
-title: Get highlight.js working beautifully in your Next.js blog
+title: Beautify code in your Next.js blog
 date: 2020-03-04T05:00:00Z
-subtitle: After some trial and error, I implemented a custom styled code block using
-  TailwindCSS
+subtitle: After some trial and error, I styled custom code blocks using Highlight.js and  TailwindCSS
 
 ---
 It definitely took me way too long to get code blocks correctly highlighted on my blog. Next.js seems to have less tutorials out there in general, especially for specific use cases like these. I hope to fix that, at least a little bit, with my own blog. As I experience issues and overcome each challenge, my plan is to write up a post about it. Here's #1!
@@ -13,7 +12,7 @@ As a starting point, I want to outline the architecture of my website. As Next.j
 
 If this is new to you, there are tutorials that explain how this works (e.g. [Next.js docs](https://nextjs.org/learn/basics/create-dynamic-pages)). Feel free to also view the code on the [GitHub repo](https://github.com/perryraskin/raskin.me).
 
-## Before highlight.js
+## Before Highlight.js
 
 For a visual, below is what the `BlogPostTemplate` component looked like before I did anything fancy. I will only include the relevant code to keep it short, but feel free to view the [entire file](https://github.com/perryraskin/raskin.me/blob/master/pages/blog/%5Bslug%5D.tsx) in the repo.
 
