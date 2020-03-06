@@ -21,7 +21,7 @@ const Newsletter = () => {
           </p>
         </div>
         <div>
-          <Subscribe buttonText="Subscribe" />
+          <Subscribe buttonText="Subscribe" keepLeft=""/>
         </div>
       </div>
       <hr></hr>

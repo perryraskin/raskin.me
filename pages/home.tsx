@@ -50,7 +50,17 @@ const Home: NextPage<HomeProps> = ({
         extend="bg-blue-400 text-white"
       />
     </Section>
-    {/* <Subscribe buttonText="Subscribe to my blog!" /> */}
+    <Section>
+      <hr></hr>
+      <h2 className="text-center text-3xl md:text-4xl leading-tight font-bold dark:text-neutral-10 mb-8 border-b-0">
+        Newsletter
+      </h2>
+      <p className="text-center">
+      I'll send out emails only when I publish a new blog post. 
+      No spam, just great content! <br/><b>I never share your email address with anyone.</b>
+      </p>
+      <Subscribe buttonText="Subscribe" keepLeft="" />
+    </Section>
   </Layout>
   );
 };
