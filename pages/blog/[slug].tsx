@@ -10,6 +10,7 @@ import Highlight from 'react-highlight';
 
 import Layout from '../../components/Layout';
 import Section from '../../components/Section';
+import Newsletter from '../../components/Newsletter';
 
 import { reformatDate } from '../blog';
 
@@ -116,6 +117,7 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
             />
           </div>
         </article>
+        <Newsletter/><br/><br/>
         <Hyvor websiteId={262} />
       </Section>
     </Layout>
