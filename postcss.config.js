@@ -22,6 +22,6 @@ module.exports = {
     tailwindcss('./tailwind.config.js'),
     require('postcss-preset-env'),
     // purgecss, cssnano
-    ...process.env.NODE_ENV !== 'production' ? [purgecss, cssnano] : []
+    ...process.env.NODE_ENV === 'production' ? [purgecss, cssnano] : []
   ],
 }
