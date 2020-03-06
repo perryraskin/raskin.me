@@ -70,6 +70,23 @@ const Projects: NextPage<ProjectsProps> = ({
 
 Projects.getInitialProps = async () => {
   // ctx contains the query param
+  const resOrg = await fetch('https://api.github.com/orgs/shmobs/repos');
+  const dataOrg = await resOrg.json();
+
+  const orgRepos = dataOrg.map((repo: any) => {
+    return {
+      id: repo.id,
+      name: repo.name,
+      description: repo.description,
+      url: repo.html_url,
+      homepage: repo.homepage,
+      language: repo.language,
+      stars: repo.stargazers_count,
+      forks: repo.forks_count,
+      isForked: repo.fork
+    }
+  })
+
   const res = await fetch('https://api.github.com/users/perryraskin/repos');
   const data = await res.json();
 
@@ -89,10 +106,12 @@ Projects.getInitialProps = async () => {
     }
   })
 
-  const filteredRepos = repos.filter((repo: any) => !repo.isForked)
+  const filteredRepos = repos.filter((repo: any) => !repo.isForked);
+  const combinedRepos = Array.prototype.push.apply(orgRepos,filteredRepos);
+  const allRepos = orgRepos;
 
   return {
-    repos: filteredRepos
+    repos: allRepos
   };
 }
 
