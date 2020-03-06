@@ -30,6 +30,7 @@
     "highlight.js": "^9.18.1",
     "hyvor-talk-react": "^1.0.1",
     "imagemin-mozjpeg": "^8.0.0",
+    "isomorphic-unfetch": "^3.0.0",
     "moment": "^2.24.0",
     "next": "^9.2.1",
     "next-compose-plugins": "^2.2.0",
