@@ -6,7 +6,9 @@ const cssnano = require('cssnano')({
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: [
     './pages/**/*.tsx',
+    './public/index.html',
     './components/**/*.tsx',
+    './components/**/*.jsx',
     './styles/tailwind.css'
   ],
   css: [
@@ -20,6 +22,6 @@ module.exports = {
     tailwindcss('./tailwind.config.js'),
     require('postcss-preset-env'),
     // purgecss, cssnano
-    ...process.env.NODE_ENV === 'production' ? [purgecss, cssnano] : []
+    ...process.env.NODE_ENV !== 'production' ? [purgecss, cssnano] : []
   ],
 }

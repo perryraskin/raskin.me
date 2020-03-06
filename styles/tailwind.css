@@ -1,7 +1,7 @@
 /* We don't want purgecss to touch this, which mostly includes Normalize.css */
 /* purgecss start ignore */
 @tailwind base;
-
+/* purgecss end ignore */
 
 /* No line height */
 .leading-0 {
@@ -132,7 +132,7 @@ h5 {
 h6 {
   @apply mt-6 mb-4 text-sm font-semibold leading-tight text-gray-600;
 }
-/* purgecss end ignore */
+
 @tailwind components;
 /* Add all custom component classes here */
 
