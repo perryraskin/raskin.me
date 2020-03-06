@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.0.6",
+    "@githubprimer/octicons-react": "^8.5.0",
     "@types/highlight.js": "^9.12.3",
     "@types/react-highlight": "^0.12.2",
     "@types/react-mailchimp-subscribe": "^2.0.2",
@@ -37,6 +38,8 @@
     "next-optimized-images": "^2.5.4",
     "nextjs-sitemap-generator": "^0.5.0",
     "nookies": "^2.0.8",
+    "octicons": "^8.5.0",
+    "octicons-react": "^1.0.1",
     "postcss-cli": "^7.1.0",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
