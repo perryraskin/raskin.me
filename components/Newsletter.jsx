@@ -16,7 +16,7 @@ const Newsletter = () => {
         <div>
           <strong className="text-2xl">Subscribe, if you'd like 🙂</strong>
           <p>
-          I'll send out emails only when I publish a new blog post. 
+          I'll send out an email only when I publish a new blog post. 
           No spam, just great content! <b>I never share your email address with anyone.</b>
           </p>
         </div>
