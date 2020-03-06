@@ -17,4 +17,4 @@ I hope this blog will allow me to contribute to the online community in the same
 1. Display relevant data (GitHub projects, Tweets, etc)
 2. Publish quick posts about web development, ideally as I learn new things
 3. Become super familiar with building with React
-4. Learn and implement UI best practices with TailWindCSS
+4. Learn and implement UI best practices with TailwindCSS
