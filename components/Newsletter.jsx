@@ -43,13 +43,13 @@ const Newsletter = () => {
                       }}
                     >
                       <div className="mt-4">
-                        <div className="mx-auto lg:mx-0 max-w-lg sm:flex sm:overflow-hidden">
+                        <div className="mx-auto max-w-lg sm:flex sm:overflow-hidden">
                         <input id="email-input" placeholder="me@email.com" ref={emailRef}
                             type="email" name="email" 
                             className="sm:flex-1 sm:min-w-0 text-lg px-6 py-3 md:px-8 md:py-5 bg-white 
                             rounded-lg sm:rounded-r-none w-full sm:w-auto block border-2 
                             border-gray-300 sm:border-r-0 bg-gray-100 focus:bg-white 
-                            focus:border-indigo-300 placeholder-gray-500 focus:outline-none"></input>
+                            focus:border-blue-300 placeholder-gray-500"></input>
                             <button className="mt-3 sm:mt-0 text-md
                               font-semibold bg-blue-600 w-full text-white
                               rounded-lg sm:rounded-l-none sm:w-auto px-6
