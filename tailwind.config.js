@@ -44,11 +44,12 @@ module.exports = {
       "hover",
       "dark",
       "dark-hover",
-      "dark-group-hover"
+      "dark-group-hover",
+      "focus"
     ],
     padding: ["dark", "dark-focus", "dark-focus-within"],
     borderWidth: ["dark", "dark-focus", "dark-focus-within", "hover"],
-    borderColor: ["dark", "dark-focus", "dark-focus-within", "hover"],
+    borderColor: ["dark", "dark-focus", "dark-focus-within", "hover", "responsive", "focus"],
     textColor: [
       "responsive",
       "hover",

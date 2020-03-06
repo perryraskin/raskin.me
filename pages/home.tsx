@@ -2,6 +2,8 @@ import { NextPage } from 'next';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
 import Button from '../components/Button';
+import Subscribe from '../components/Subscribe';
+
 import { Twitter, GitHub, Linkedin } from "react-feather";
 
 import { data } from '../data.js';
@@ -48,6 +50,7 @@ const Home: NextPage<HomeProps> = ({
         extend="bg-blue-400 text-white"
       />
     </Section>
+    {/* <Subscribe buttonText="Subscribe to my blog!" /> */}
   </Layout>
   );
 };
