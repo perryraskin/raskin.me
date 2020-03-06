@@ -34,7 +34,7 @@ const Projects: NextPage<ProjectsProps> = ({
       <Section>
         <h1>Projects</h1>
         <p>
-        This page will soon list my projects in an aesthetically pleasing format. Stay tuned...
+        A list of projects I've recently been working on.
         </p>
       </Section>
       <Section extend="mt-0">
