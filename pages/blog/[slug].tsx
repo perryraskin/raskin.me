@@ -4,13 +4,13 @@ import matter from 'gray-matter';
 import styled from 'styled-components';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Hyvor from '../../components/Hyvor';
 
 import Highlight from 'react-highlight';
 
 import Layout from '../../components/Layout';
 import Section from '../../components/Section';
 import Newsletter from '../../components/Newsletter';
+import Hyvor from '../../components/Hyvor';
 
 import { reformatDate } from '../blog';
 
@@ -77,11 +77,6 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
   // data from getInitialProps
   const markdownBody = result.content
   const frontmatter = result.data
-
-  var Converter = require('react-showdown').Converter;
-  var converter = new Converter();
-  
-  var reactElement = converter.convert(markdownBody);
   return (
     <Layout>
       <Head>
