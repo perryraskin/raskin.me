@@ -22,6 +22,11 @@ const ProjectCard: NextPage<ProjectCardProps> = ({
   stars,
   forks
 }) => {
+  let languageColor = 'blue';
+  if (language === 'JavaScript') languageColor = 'yellow';
+  else if (language === 'TypeScript') languageColor = 'indigo';
+  else if (language === 'Java') languageColor = 'red';
+  else if (language === 'Jupyter Notebook') languageColor = 'orange';
   return (
     <Link
       href={url}
@@ -37,7 +42,10 @@ const ProjectCard: NextPage<ProjectCardProps> = ({
             </p>
           </div>
           <div className="flex items-center justify-between w-full mt-2">
-            <button className="px-3 py-1 text-sm font-semibold uppercase rounded-lg bg-primary-50 text-primary-600 dark:bg-primary-500 dark:text-primary-50">
+            <button 
+              className={`px-3 py-1 text-sm font-semibold rounded-lg bg-${languageColor}-100 
+                         text-${languageColor}-600 dark:bg-${languageColor}-500 
+                         dark:text-white`}>
               {language}
             </button>
             <span className="my-auto text-sm font-semibold">
