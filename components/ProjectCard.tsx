@@ -40,9 +40,10 @@ const ProjectCard: NextPage<ProjectCardProps> = ({
             <button 
               className={`px-3 py-1 text-sm font-semibold rounded-lg 
               ${language === 'JavaScript' ? ' bg-yellow-100 text-yellow-600 dark:bg-yellow-500 ' : ''}
-              ${language === 'TypeScript' ? ' bg-indigo-100 text-indigo-600 dark:bg-indigo-300 ' : ''}
-              ${language === 'Java' ? ' bg-red-100 text-red-600 dark:bg-red-300 ' : ''}
-              ${language === 'Jupyter Notebook' ? ' bg-orange-100 text-orange-600 dark:bg-orange-300 ' : ''}
+              ${language === 'TypeScript' ? ' bg-indigo-100 text-indigo-600 dark:bg-indigo-500 ' : ''}
+              ${language === 'Java' ? ' bg-red-100 text-red-600 dark:bg-red-500 ' : ''}
+              ${language === 'Jupyter Notebook' ? ' bg-orange-100 text-orange-600 dark:bg-orange-500 ' : ''}
+              ${language === 'Python' ? ' bg-blue-100 text-blue-600 dark:bg-blue-500 ' : ''}
               dark:text-white`}>
               {language}
             </button>
