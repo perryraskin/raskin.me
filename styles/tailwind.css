@@ -133,6 +133,7 @@ h6 {
   @apply mt-6 mb-4 text-sm font-semibold leading-tight text-gray-600;
 }
 
+
 @tailwind components;
 /* Add all custom component classes here */
 
