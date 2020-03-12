@@ -81,19 +81,19 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
     <Layout>
       <Head>
         {/* General tags */}
-        <meta name="description" content={frontmatter.subtitle}/>
+        <meta key="description" property="description" content={frontmatter.subtitle}/>
         <title>{frontmatter.title}</title>
         {/* OpenGraph tags */}
-        <meta name="og:url" content={frontmatter.url} />
-        <meta name="og:title" content={frontmatter.title} />
-        <meta name="og:description" content={frontmatter.subtitle} />
-        <meta name="og:image" content={frontmatter.socialImage} />
-        <meta name="og:type" content="website" />
+        <meta key="og:url" property="og:url" content={frontmatter.url} />
+        <meta key="og:title" property="og:title" content={frontmatter.title} />
+        <meta key="og:description" property="og:description" content={frontmatter.subtitle} />
+        <meta key="og:image" property="og:image" content={frontmatter.socialImage} />
+        <meta key="og:type" property="og:type" content="website" />
         {/* Twitter Card tags */}
-        <meta name="twitter:title" content={frontmatter.title} />
-        <meta name="twitter:description" content={frontmatter.subtitle} />
-        <meta name="twitter:image" content={frontmatter.socialImage} />
-        <meta name="twitter:card" content="summary" />
+        <meta key="twitter:title" property="twitter:title" content={frontmatter.title} />
+        <meta key="twitter:description" property="twitter:description" content={frontmatter.subtitle} />
+        <meta key="twitter:image" property="twitter:image" content={frontmatter.socialImage} />
+        <meta key="twitter:card" property="twitter:card" content="summary" />
       </Head>
       <Section>
         <article className="mb-10 markdown">
