@@ -16,3 +16,5 @@ fields:
   config:
     required: false
   label: socialImage
+pages:
+- posts/quick-start-next-js-and-plaid-to-work-with-financial-data.md
