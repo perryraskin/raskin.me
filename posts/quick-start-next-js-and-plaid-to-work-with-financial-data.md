@@ -1,5 +1,5 @@
 ---
-title: 'Quick Start: Next.js and Plaid to work with financial data'
+title: 'Quick Start: Next.js and Plaid to pull financial data'
 date: 2020-03-14T04:00:00Z
 subtitle: Your guide to getting started with Plaid in a Next.js app
 socialimage: https://res.cloudinary.com/raskin-me/image/upload/v1584124448/nextjs-plaid-tailwind/nextjs-plaid-tailwind_mcw3fk.jpg
