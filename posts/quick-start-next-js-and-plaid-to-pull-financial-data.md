@@ -2,7 +2,7 @@
 title: 'Quick Start: Next.js and Plaid to pull financial data'
 date: 2020-03-14T04:00:00.000+00:00
 subtitle: Your guide to getting started with Plaid in a Next.js app
-socialimage: https://res.cloudinary.com/raskin-me/image/upload/v1584124448/nextjs-plaid-tailwind/nextjs-plaid-tailwind_mcw3fk.jpg
+socialimage: https://res.cloudinary.com/raskin-me/image/upload/v1584292547/nextjs-plaid-tailwind/nextjs-plaid-social-image_ohwo5z.jpg
 
 ---
 Now that I've got a lovely [Next.js personal website](https://raskin.me) up and running, I'm ready for my next project. I've always enjoyed grabbing CSV files from my credit card or bank accounts and playing around with the financial data. It allowed me to run super custom reports for properly managing personal finances. One method of doing this was using Jupyter Notebook and running some Matplotlib plots, which I explain on [this GitHub repo](https://github.com/perryraskin/TransFormer).
