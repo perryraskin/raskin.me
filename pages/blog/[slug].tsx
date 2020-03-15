@@ -11,6 +11,7 @@ import Layout from '../../components/Layout';
 import Section from '../../components/Section';
 import Newsletter from '../../components/Newsletter';
 import Hyvor from '../../components/Hyvor';
+import SocialButtons from '../../components/SocialButtons';
 
 import { reformatDate } from '../blog';
 
@@ -97,12 +98,16 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
       </Head>
       <Section>
         <article className="mb-10 markdown">
+          <SocialButtons frontmatter={frontmatter} extend="text-center lg:text-right" />
           <header>
             <h1 className="text-5xl">{frontmatter.title}</h1>
           </header>
           <div className="mb-5 my-auto text-sm font-semibold text-neutral-400">
-              {reformatDate(frontmatter.date)}
-            </div>
+            <div>{reformatDate(frontmatter.date)}</div>
+          </div>
+          <div className="mb-5 my-auto text-sm text-right font-semibold text-neutral-400">
+            
+          </div>
           <div>
             <ReactMarkdown 
               source={markdownBody}
@@ -112,6 +117,7 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
             />
           </div>
         </article>
+        <SocialButtons frontmatter={frontmatter} extend="text-center" />
         <Newsletter/><br/><br/>
         <Hyvor websiteId={262} />
       </Section>
