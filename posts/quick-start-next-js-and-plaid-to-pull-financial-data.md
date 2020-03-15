@@ -1,19 +1,19 @@
 ---
 title: 'Quick Start: Next.js and Plaid to pull financial data'
-date: 2020-03-14T04:00:00Z
+date: 2020-03-14T04:00:00.000+00:00
 subtitle: Your guide to getting started with Plaid in a Next.js app
 socialimage: https://res.cloudinary.com/raskin-me/image/upload/v1584124448/nextjs-plaid-tailwind/nextjs-plaid-tailwind_mcw3fk.jpg
 
 ---
 Now that I've got a lovely [Next.js personal website](https://raskin.me) up and running, I'm ready for my next project. I've always enjoyed grabbing CSV files from my credit card or bank accounts and playing around with the financial data. It allowed me to run super custom reports for properly managing personal finances. One method of doing this was using Jupyter Notebook and running some Matplotlib plots, which I explain on [this GitHub repo](https://github.com/perryraskin/TransFormer).
 
-For a while now I've been meaning to integrate Plaid into a web app and try manipulating some financial data. After inevitably using it in the many budgeting apps I've encountered, I knew I had to give it a try myself. Currently I use [Copilot](https://copilot.money), an iOS budgeting app that uses Plaid, and I absolutely love it. Feel free to use my code MRJA4Q to get 3 months free!
+For a while now I've been meaning to integrate Plaid into a web app and try manipulating some financial data. After inevitably using it in the many budgeting apps I've encountered, I knew I had to give it a try myself. Currently I use [Copilot](https://copilot.money), an iOS budgeting app that uses Plaid, and I absolutely love it. My code MRJA4Q will get you **3 months free**!
 
 I followed a [blog post](https://medium.com/@dereksams/building-a-react-app-with-the-plaid-api-93e45ae61b58) by Derek Sams that showed me how to get a React app running with Plaid. To get it working with Next.js, I had to make a few changes you may notice if you decide to compare the two.
 
 ## Our Starter App
 
-What we're focusing on here is to simply get Plaid working with a working React app. It will make a call to Plaid's transactions API and display transactions to the console. Of course once you get this done you can build upon this thing to make it do some really useful stuff! 
+What we're focusing on here is to simply get Plaid working with a working React app. It will make a call to Plaid's transactions API and display transactions to the console. Of course once you get this done you can build upon this thing to make it do some really useful stuff!
 
 ## Get Set Up
 
@@ -21,7 +21,7 @@ If you'd like, you can get started from scratch using [Next.js's guide](https://
 
 ## The Code
 
-Normally Next.js doesn't require a `server.js` file, as the server is something that is build into the framework, and is kind of automatic. Since we need more control here, this file is important for working with Plaid's API.
+Normally Next.js doesn't require a `server.js` file, as the server is something that is built into the framework, and is kind of automatic. Since we need more control here, this file is important for working with Plaid's API.
 
 ### The Server
 
@@ -65,6 +65,10 @@ You may notice that `app` isn't defined as `express()` like it is in a standard 
         console.log(`> Ready on ${port}`);
       });
     });
+
+### The Controller
+
+You'll see functions in `controller.js` doing all the work when it comes to actually pulling data from Plaid's API. The only thing you need to do here is ensure that your `.env` file has the correct API tokens as explained in the repo's ReadMe file. The controller will pull those values and use them during these function calls.
 
 ### The Front End Component
 
