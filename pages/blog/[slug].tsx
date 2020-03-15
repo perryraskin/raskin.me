@@ -32,7 +32,7 @@ interface Data {
   title: string;
   date: string;
   subtitle: string;
-  socialImage: string;
+  socialimage: string;
 }
 
 const Blockquote = styled.blockquote.attrs({
@@ -87,12 +87,12 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
         <meta key="og:url" property="og:url" content={frontmatter.url} />
         <meta key="og:title" property="og:title" content={frontmatter.title} />
         <meta key="og:description" property="og:description" content={frontmatter.subtitle} />
-        <meta key="og:image" property="og:image" content={frontmatter.socialImage} />
+        <meta key="og:image" property="og:image" content={frontmatter.socialimage} />
         <meta key="og:type" property="og:type" content="website" />
         {/* Twitter Card tags */}
         <meta key="twitter:title" property="twitter:title" content={frontmatter.title} />
         <meta key="twitter:description" property="twitter:description" content={frontmatter.subtitle} />
-        <meta key="twitter:image" property="twitter:image" content={frontmatter.socialImage} />
+        <meta key="twitter:image" property="twitter:image" content={frontmatter.socialimage} />
         <meta key="twitter:card" property="twitter:card" content="summary" />
       </Head>
       <Section>
@@ -130,6 +130,7 @@ BlogTemplate.getInitialProps = async ctx => {
   //const config = await import(`../../data/config.json`)
   //gray-matter parses the yaml frontmatter from the md body
   const result = matter(content.default)
+  
   return {
     result: {
       content: result.content,
@@ -138,7 +139,7 @@ BlogTemplate.getInitialProps = async ctx => {
         title: result.data.title,
         date: result.data.date,
         subtitle: result.data.subtitle,
-        socialImage: result.data.socialImage
+        socialimage: result.data.socialimage
       }
     }
   }
