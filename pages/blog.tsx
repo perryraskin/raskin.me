@@ -118,8 +118,10 @@ Blog.getInitialProps = async => {
     return data
   })(require.context('../posts', true, /\.md$/));
   
+  const sortedPosts = posts.sort((a: any, b: any) => b.document.data.date - a.document.data.date);
+  
   return {
-    posts: posts,
+    posts: sortedPosts,
   }
 }
 
