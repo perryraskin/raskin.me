@@ -21,54 +21,58 @@ If you'd like, you can get started from scratch using [Next.js's guide](https://
 
 ## The Code
 
-Normally Next.js doesn't require a `server.js` file, as the server is something that is built into the framework, and is kind of automatic. Since we need more control here, this file is important for working with Plaid's API.
+Notice our API routes in `/pages/api`. Next.js automatically handles routing for us simply based on files it detects in this folder, like magic! We will take advantage of this along with our handy fetching utility called `isomorphic-unfetch`. These are important for working with Plaid's API.
 
-### The Server
+### The API
 
-Since Next.js automatically runs the server, we need to work with what it already provides us with.
+Let's take a look at the API in `/pages/api/plaid/index.js`. First we need to import `next-connect,` which will allow us to utilize the Next.js request handler. In our case, we will be sending a `POST` request. Then of course we'll need `plaid` for connecting to Plaid's API, and `moment` to do work with a few dates.
 
-    const dotenv = require('dotenv').config();
-    const next = require('next');
-    const express = require("express");
-    
-    const port = parseInt(process.env.PORT, 10) || 3001;
-    const dev = process.env.NODE_ENV !== 'production';
-    const app = next({ dev });
-    const handle = app.getRequestHandler();
+    import nextConnect from 'next-connect';
+    import plaid from 'plaid';
+    import moment from 'moment';
 
-You may notice that `app` isn't defined as `express()` like it is in a standard `server.js` file. Here, we're going to have Next.js start the server, and then we'll call `express` when we need our Plaid API routes.
+Next, we need to initialize some variables. As our `.env` file defines the API tokens received from Plaid, I defined them here. These are used to create the Plaid client object, which allows us to exchange keys and grab transactions as will be seen later in the file.
 
-    app.prepare().then(() => {
-      const {
-        receivePublicToken,
-        getTransactions
-      } = require("./controllers/controller");
+    const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
+    const PLAID_SECRET = process.env.PLAID_SECRET_SANDBOX;
+    const PLAID_PUBLIC_KEY = process.env.PLAID_PUBLIC_KEY;
+    const PLAID_ENV = process.env.PLAID_ENV;
     
-      const server = express();
+    var ACCESS_TOKEN = null;
+    var ITEM_ID = null;
     
-      server.use(express.json());
+    // Initialize the Plaid client
+    export const client = new plaid.Client(
+      PLAID_CLIENT_ID,
+      PLAID_SECRET,
+      PLAID_PUBLIC_KEY,
+      plaid.environments[PLAID_ENV],
+      { version: '2019-05-29', clientApp: 'Plaid Quickstart' }
+    );
     
-      server.use('/', express.static('../public'));
-    
-      // Get the public token and exchange it for an access token
-      server.post("/auth/public_token", receivePublicToken);
-    
-      // Get Transactions
-      server.get("/transactions", getTransactions);
-    
-      server.all('*', (req, res) => {
-        return handle(req, res);
-      });
-    
-      server.listen(port, err => {
-        if (err) throw err;
-        console.log(`> Ready on ${port}`);
-      });
-    });
+    const handler = nextConnect();
 
-### The Controller
+`handler.post` will begin the API call. We are doing two things here:
 
-You'll see functions in `controller.js` doing all the work when it comes to actually pulling data from Plaid's API. The only thing you need to do here is ensure that your `.env` file has the correct API tokens as explained in the repo's ReadMe file. The controller will pull those values and use them during these function calls.
+* Calling `client.exchangePublicToken` to provide us with the access token
+* Calling `client.getTransactions` to return all transactions from the past 30 days
+
+Once we receive the access token from `client.exchangePublicToken` we will use it when we call `client.getTransactions`. That's pretty much all that's going on here. The rest of the code is console logging the results so we can see what's going on as it happens.
+
+Upon a successful response, we will receive the following JSON:
+
+    res.json({
+      ok: true,
+      message: 'Success!',
+      access_token: ACCESS_TOKEN,
+      item_id: ITEM_ID,
+      transactions: transactions
+    })
+
+If you use Postman, you should see this response. Clicking the "View Transactions" button after you connect the (sandbox) bank account, the dev console will output the `{ transactions: transactions }` part of that response. More on front end aspects in the next section. Be sure to use the following sandbox credentials, provided by Plaid:
+
+* **User ID:** user_good
+* **Password:** pass_good
 
 ### The Front End Component
 
@@ -78,16 +82,30 @@ I recently learned that if we want to work with state when using Next.js, we nee
 
 That's it! We're basically just declaring a variable along with a matching setter for its state. In this case, `transactions` is the variable and `setTransactions` is the setter function. If you are familiar with deconstructing, you cant think about it as deconstructing the imported `useState` functionality.
 
-    function handleClick(res: any) {
-       axios.get("/transactions").then(res => {
-         setTransactions({ transactions: res.data });
-       });
-     }
+    function handleOnSuccess(public_token: any, metadata: any) {
+        // send token to client server
+        fetchSwal
+          .post('/api/plaid', {
+            public_token: public_token,
+            metadata: metadata,
+          })
+          .then((res) => {
+            if (res.ok !== false) {
+              setTransactions({ transactions: res.transactions });
+            }
+          });
+      }
 
-This is the function that handles the click of our “Get Transactions” button to grab transactions. You'll see in the `PLink` component how it all comes together. This basically just makes an API call to grab the transactions from the account you just logged into through Plaid! Once we have the transactions, our `setTransactions` setter function sets the state to the value we just received.
+This is the function that handles the click of our “Connect your bank!” button to grab transactions. You'll see in the `PLink` component how it all comes together. This basically just makes an API call to grab the transactions from the account you just logged into through Plaid! Once we have the transactions, our `setTransactions` setter function sets the state to the value we just received.
+
+We will then print the transactions to the dev console (in Chrome, for example) by clicking the "View Transactions" button. 
+
+    function handleClick(res: any) {
+      console.log('transactions:', transactions);
+    }
 
 ## Conclusion
 
-Once all of this is done, you'll see the object of transactions in the node console (_not_ the Chrome console). It's amazing that we have access to such a great API like Plaid. It really allows us devs to get creative with all kinds of data.
+It's amazing that we have access to such a great API like Plaid. It really allows us devs to get creative with all kinds of data.
 
 Feel free to leave comments and let me know how this went for you! I'd love to hear about any cool features you implemented following this initial setup.
