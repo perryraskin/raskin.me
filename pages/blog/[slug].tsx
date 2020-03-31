@@ -127,9 +127,9 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
 
 BlogTemplate.getInitialProps = async ctx => {
   // ctx contains the query param
-  const { slug, handle } = ctx.query
+  const { slug, handle } = ctx.query;
   // super weird that sometimes it's slug and sometimes it's handle
-  let blogPost = typeof slug === 'undefined' ? handle : slug
+  let blogPost = typeof slug === 'undefined' ? handle : slug;
   // grab the file in the posts dir based on the slug
   const content = await import(`../../posts/${blogPost}.md`);
   // also grab the config file so we can pass down siteTitle
