@@ -29,11 +29,16 @@ const Home: NextPage<HomeProps> = ({
         Thanks for stopping by! 👋
       </p>
       <h2 className="text-4xl md:text-6xl leading-tight font-bold dark:text-neutral-10 mb-8 border-b-0">
-        I’m Perry Raskin.<br />
-        Full stacking.<br />
+        I’m Perry Raskin<br />
+        {/* Full stacking.<br />
         Side projecting.<br />
-        Learning.
+        Learning. */}
       </h2>
+      <p className="text-3xl">
+      Full stack development is what I do most. 
+      Currently, I'm working on <a href="https://pointway.app">Pointway</a>. It's an all-in-one tool 
+      to keep track of credit card purchases, along with points earned.
+      </p><br/>
       <Button
         text=""
         icon={<Linkedin/>}

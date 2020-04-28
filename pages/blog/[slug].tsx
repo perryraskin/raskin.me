@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import matter from 'gray-matter';
 import styled from 'styled-components';
@@ -124,6 +124,77 @@ const BlogTemplate: NextPage<BlogTemplateProps> = ({ result }) => {
     </Layout>
   )
 };
+
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   // ctx contains the query param
+//   // get all .md files from the src/posts dir
+//   const posts = (context => {
+//     // grab all the files matching this context
+//     const keys = context.keys();
+//     // grab the values from these files
+//     const values = keys.map(context);
+//     // go through each file
+//     const data = keys.map((key: any, index: any) => {
+//       // Create slug from filename
+//       const slug = key
+//         .replace(/^.*[\\\/]/, '')
+//         .split('.')
+//         .slice(0, -1)
+//         .join('.')
+//       // get the current file value
+//       const value: any = values[index];
+//       // Parse frontmatter & markdownbody for the current file
+//       const document = matter(value.default);
+      
+//       // return the .md content & pretty slug
+//       return {
+//         document,
+//         slug,
+//       }
+//     })
+//     // return all the posts
+//     return data
+//   })(require.context('../../posts', true, /\.md$/));
+//   const paths = posts.map(post => `/blog/${post.slug}`)
+//   return { 
+//     paths, 
+//     fallback: false 
+//   }
+// }
+
+// export const getStaticProps: GetStaticProps = async ctx => {
+
+//   try {
+//     // ctx contains the query param
+//     const { params } = ctx;
+//     console.log(params);
+//     const blogPost = params?.slug ? params?.slug : params?.handle;
+//     console.log(blogPost);
+//     // grab the file in the posts dir based on the slug
+//     const content = await import(`../..posts/${blogPost}.md`);
+//     // also grab the config file so we can pass down siteTitle
+//     //const config = await import(`../../data/config.json`)
+//     //gray-matter parses the yaml frontmatter from the md body
+//     const result = matter(content.default);
+//     return {
+//       props: {
+//         result: {
+//           content: result.content,
+//           data: {
+//             url: `https://raskin.me/blog/${blogPost}`,
+//             title: result.data.title,
+//             date: result.data.date,
+//             subtitle: result.data.subtitle,
+//             socialimage: result.data.socialimage
+//           }
+//         }
+//       }
+//     }
+//   } 
+//   catch (err) {
+//     return { props: { errors: err.message }};
+//   }
+// }
 
 BlogTemplate.getInitialProps = async ctx => {
   // ctx contains the query param
