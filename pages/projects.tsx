@@ -1,10 +1,10 @@
-import { NextPage } from 'next';
-import Head from 'next/head';
-import fetch from 'isomorphic-unfetch';
+import { NextPage } from "next";
+import Head from "next/head";
+import fetch from "isomorphic-unfetch";
 
-import Layout from '../components/Layout';
-import Section from '../components/Section';
-import ProjectCard from '../components/ProjectCard';
+import Layout from "../components/Layout";
+import Section from "../components/Section";
+import ProjectCard from "../components/ProjectCard";
 
 interface ProjectsProps {
   repos: Array<RepoDetails>;
@@ -22,20 +22,16 @@ interface RepoDetails {
   isForked: boolean;
 }
 
-const Projects: NextPage<ProjectsProps> = ({
-  repos
-}) => {
-  return(
+const Projects: NextPage<ProjectsProps> = ({ repos }) => {
+  return (
     <Layout>
       <Head>
-        <meta name="description" content="About me, my projects, and my blog"/>
+        <meta name="description" content="About me, my projects, and my blog" />
         <title>Perry Raskin | Projects</title>
       </Head>
       <Section>
         <h1>Projects</h1>
-        <p>
-        A list of projects I've recently been working on.
-        </p>
+        <p>A list of projects I've recently been working on.</p>
       </Section>
       <Section extend="mt-0">
         <div className="flex flex-wrap -mx-2">
@@ -65,16 +61,39 @@ const Projects: NextPage<ProjectsProps> = ({
         </div>
       </Section>
     </Layout>
-  )
-}
+  );
+};
 
 Projects.getInitialProps = async () => {
   // ctx contains the query param
-  const resOrg = await fetch('https://api.github.com/orgs/shmobs/repos');
+  const resHatchways = await fetch(
+    "https://api.github.com/orgs/hatchways/repos?direction=desc"
+  );
+  const dataHatchways = await resHatchways.json();
+  const hatchwaysRepos = dataHatchways.map((repo: any) => {
+    return {
+      id: repo.id,
+      name: repo.name,
+      description: "Tattoo contests for a cash prize",
+      url: repo.html_url,
+      homepage: repo.homepage,
+      language: repo.language,
+      stars: repo.stargazers_count,
+      forks: repo.forks_count,
+      isForked: repo.fork,
+    };
+  });
+  const hatchwaysRepo = hatchwaysRepos.filter(
+    (repo: any) => repo.name === "team-hummingbird"
+  )[0];
+
+  const resOrg = await fetch("https://api.github.com/orgs/shmobs/repos");
   const dataOrg = await resOrg.json();
 
-  const orgRepos = dataOrg.map((repo: any) => {
-    return {
+  let orgRepos = [];
+  orgRepos.push(hatchwaysRepo);
+  dataOrg.forEach((repo: any) => {
+    orgRepos.push({
       id: repo.id,
       name: repo.name,
       description: repo.description,
@@ -83,11 +102,11 @@ Projects.getInitialProps = async () => {
       language: repo.language,
       stars: repo.stargazers_count,
       forks: repo.forks_count,
-      isForked: repo.fork
-    }
-  })
+      isForked: repo.fork,
+    });
+  });
 
-  const res = await fetch('https://api.github.com/users/perryraskin/repos');
+  const res = await fetch("https://api.github.com/users/perryraskin/repos");
   const data = await res.json();
 
   console.log(`Show repos fetched. Count: ${data.length}`);
@@ -102,17 +121,17 @@ Projects.getInitialProps = async () => {
       language: repo.language,
       stars: repo.stargazers_count,
       forks: repo.forks_count,
-      isForked: repo.fork
-    }
-  })
+      isForked: repo.fork,
+    };
+  });
 
   const filteredRepos = repos.filter((repo: any) => !repo.isForked);
-  const combinedRepos = Array.prototype.push.apply(orgRepos,filteredRepos);
+  const combinedRepos = Array.prototype.push.apply(orgRepos, filteredRepos);
   const allRepos = orgRepos;
 
   return {
-    repos: allRepos
+    repos: allRepos,
   };
-}
+};
 
 export default Projects;
