@@ -33,8 +33,4 @@
   <url>
     <loc>https://raskin.me/projects</loc>
   </url>
-
-  <url>
-    <loc>https://raskin.me/blog/[slug]</loc>
-  </url>
 </urlset>
