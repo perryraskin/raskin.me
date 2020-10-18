@@ -1,5 +1,5 @@
-import { NextPage } from 'next';
-import Link from 'next/link';
+import { NextPage } from "next";
+import Link from "next/link";
 
 interface BlogPostCardProps {
   title: string;
@@ -10,17 +10,18 @@ interface BlogPostCardProps {
 }
 
 const BlogPostCard: NextPage<BlogPostCardProps> = ({
-  title, 
-  subtitle, 
-  timeToRead, 
-  slug, 
-  date 
+  title,
+  subtitle,
+  timeToRead,
+  slug,
+  date,
 }) => {
   return (
-    <Link
-      href={slug}
-    >
-      <a className="w-full px-2 my-2 overflow-hidden overflow-visible md:my-2 md:px-2 md:w-1/2 h-65" href={slug}>
+    <Link href={slug}>
+      <a
+        className="w-full px-2 my-2 overflow-hidden overflow-visible md:my-2 md:px-2 md:w-1/2 h-65"
+        href={slug}
+      >
         <article className="flex flex-col items-start justify-between h-full p-6 bg-white rounded-lg shadow dark:bg-neutral-700">
           <div>
             <h3 className="mt-0 text-3xl">{title}</h3>
@@ -40,6 +41,6 @@ const BlogPostCard: NextPage<BlogPostCardProps> = ({
       </a>
     </Link>
   );
-}
+};
 
 export default BlogPostCard;
