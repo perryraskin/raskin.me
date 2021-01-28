@@ -66,15 +66,16 @@ const Projects: NextPage<ProjectsProps> = ({ repos }) => {
 
 Projects.getInitialProps = async () => {
   // ctx contains the query param
-  const resHatchways = await fetch(
-    "https://api.github.com/orgs/hatchways/repos?direction=desc"
+  const resBlueswitch = await fetch(
+    "https://api.github.com/orgs/BlueSwitchNY/repos"
   );
-  const dataHatchways = await resHatchways.json();
-  const hatchwaysRepos = dataHatchways.map((repo: any) => {
+  const dataBlueswitch = await resBlueswitch.json();
+
+  const blueswitchRepos = dataBlueswitch.map((repo: any) => {
     return {
       id: repo.id,
       name: repo.name,
-      description: "Tattoo contests for a cash prize",
+      description: repo.description,
       url: repo.html_url,
       homepage: repo.homepage,
       language: repo.language,
@@ -83,15 +84,15 @@ Projects.getInitialProps = async () => {
       isForked: repo.fork,
     };
   });
-  const hatchwaysRepo = hatchwaysRepos.filter(
-    (repo: any) => repo.name === "team-hummingbird"
+  const blueswitchRepo = blueswitchRepos.filter(
+    (repo: any) => repo.name === "litedocs"
   )[0];
 
   const resOrg = await fetch("https://api.github.com/orgs/shmobs/repos");
   const dataOrg = await resOrg.json();
 
   let orgRepos = [];
-  orgRepos.push(hatchwaysRepo);
+  orgRepos.push(blueswitchRepo);
   dataOrg.forEach((repo: any) => {
     orgRepos.push({
       id: repo.id,
