@@ -34,9 +34,8 @@ const Home: NextPage<HomeProps> = ({ userAgent, data }) => {
         </h2>
         <p className="text-3xl">
           Full stack development is what I do most. Currently, I'm working on{" "}
-          <a href="https://pointway.app">Pointway</a>. It's an all-in-one tool
-          to keep track of credit card purchases and earned points. It will also
-          help you efficiently plan your next trip using those points!
+          <a href="https://kano.today">Kano</a>. It's an all-in-one platform for
+          team productivity via task boards and message groups.
         </p>
         <br />
         <Button
