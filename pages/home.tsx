@@ -33,9 +33,8 @@ const Home: NextPage<HomeProps> = ({ userAgent, data }) => {
         Learning. */}
         </h2>
         <p className="text-3xl">
-          Full stack development is what I do most. Currently, I'm working on{" "}
-          <a href="https://kano.today">Kano</a>. It's an all-in-one platform for
-          team productivity via task boards and message groups.
+          Full stack development is what I do & enjoy. Currently, I'm working on a dashboard for tracking online purchases (currently in private beta). I'm also working on{" "}
+          <a href="https://kano.today">Kano</a>.
         </p>
         <br />
         <Button
