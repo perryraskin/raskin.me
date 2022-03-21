@@ -66,33 +66,11 @@ const Projects: NextPage<ProjectsProps> = ({ repos }) => {
 
 Projects.getInitialProps = async () => {
   // ctx contains the query param
-  const resBlueswitch = await fetch(
-    "https://api.github.com/orgs/BlueSwitchNY/repos"
-  );
-  const dataBlueswitch = await resBlueswitch.json();
-
-  const blueswitchRepos = dataBlueswitch.map((repo: any) => {
-    return {
-      id: repo.id,
-      name: repo.name,
-      description: repo.description,
-      url: repo.html_url,
-      homepage: repo.homepage,
-      language: repo.language,
-      stars: repo.stargazers_count,
-      forks: repo.forks_count,
-      isForked: repo.fork,
-    };
-  });
-  const blueswitchRepo = blueswitchRepos.filter(
-    (repo: any) => repo.name === "litedocs"
-  )[0];
 
   const resOrg = await fetch("https://api.github.com/orgs/shmobs/repos");
   const dataOrg = await resOrg.json();
 
   let orgRepos = [];
-  orgRepos.push(blueswitchRepo);
   dataOrg.forEach((repo: any) => {
     orgRepos.push({
       id: repo.id,
