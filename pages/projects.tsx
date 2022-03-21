@@ -70,7 +70,7 @@ Projects.getInitialProps = async () => {
   const resOrg = await fetch("https://api.github.com/orgs/shmobs/repos");
   const dataOrg = await resOrg.json();
 
-  let orgRepos = [];
+  let orgRepos: any[] = [];
   dataOrg.forEach((repo: any) => {
     orgRepos.push({
       id: repo.id,
