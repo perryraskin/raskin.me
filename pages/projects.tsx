@@ -70,7 +70,7 @@ Projects.getInitialProps = async () => {
   const resOrg = await fetch("https://api.github.com/orgs/shmobs/repos");
   const dataOrg = await resOrg.json();
 
-  let orgRepos = [];
+  let orgRepos: any[] = [];
   dataOrg.forEach((repo: any) => {
     orgRepos.push({
       id: repo.id,
@@ -91,22 +91,37 @@ Projects.getInitialProps = async () => {
   console.log(`Show repos fetched. Count: ${data.length}`);
 
   const repos = data.map((repo: any) => {
-    return {
-      id: repo.id,
-      name: repo.name,
-      description: repo.description,
-      url: repo.html_url,
-      homepage: repo.homepage,
-      language: repo.language,
-      stars: repo.stargazers_count,
-      forks: repo.forks_count,
-      isForked: repo.fork,
-    };
+    if (
+      [
+        "boxscore-challenge",
+        "contacts-app",
+        "DOMify",
+        "hybrid-weekly",
+        "litedocs",
+        "nextjs-tailwind-shopify-storefront",
+        "nextjs-tailwindcss-starter",
+        "raskin.me",
+        "twitter-telegram-bot",
+        "trip-planner",
+      ].includes(repo.name)
+    ) {
+      return {
+        id: repo.id,
+        name: repo.name,
+        description: repo.description,
+        url: repo.html_url,
+        homepage: repo.homepage,
+        language: repo.language,
+        stars: repo.stargazers_count,
+        forks: repo.forks_count,
+        isForked: repo.fork,
+      };
+    }
   });
 
-  const filteredRepos = repos.filter((repo: any) => !repo.isForked);
-  const combinedRepos = Array.prototype.push.apply(orgRepos, filteredRepos);
-  const allRepos = orgRepos;
+  // const filteredRepos = repos.filter((repo: any) => !repo.isForked);
+  // const combinedRepos = Array.prototype.push.apply(orgRepos, filteredRepos);
+  const allRepos = [...orgRepos, ...repos];
 
   return {
     repos: allRepos,
