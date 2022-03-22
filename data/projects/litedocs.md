@@ -4,7 +4,7 @@ title: "LiteDocs"
 slug: litedocs
 tech: ["Next.js", "Tailwind CSS"]
 web: https://www.litedocs.io
-icon: /images/work/show/litedocs-icon.png
+icon: https://res.cloudinary.com/raskin-me/image/upload/v1647982481/raskin.me/images/litedocs-icon_go9q9y.png
 ---
 
 Minimalist documentation.

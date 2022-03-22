@@ -4,7 +4,7 @@ title: "RecipeJoiner"
 slug: recipejoiner
 tech: ["React.js", "Tailwind CSS"]
 web: http://recipejoiner.herokuapp.com/
-icon: /images/work/show/recipejoiner-icon.png
+icon: https://res.cloudinary.com/raskin-me/image/upload/v1647982481/raskin.me/images/recipejoiner-icon_tdkcge.png
 ---
 
 A recipe managing app.

@@ -4,7 +4,7 @@ title: "Trip Planner"
 slug: trip-planner
 tech: ["Next.js", "Tailwind CSS"]
 web:
-icon: /images/work/show/github-icon.png
+icon: https://res.cloudinary.com/raskin-me/image/upload/v1647982481/raskin.me/images/github-icon_zutfxg.png
 ---
 
 An app to help plan trips by offering a UI to compare trip components (e.g. hotel rooms).
