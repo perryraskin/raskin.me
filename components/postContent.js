@@ -36,7 +36,7 @@ export default function PostContent({ post }) {
       )}
 
       <div className="mt-4 text-gray-200">
-        ____________________________________________________________
+        ______________________________________________
       </div>
       <div className="mb-4 mt-10 post-content">
         <Newsletter />

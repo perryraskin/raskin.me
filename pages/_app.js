@@ -28,8 +28,7 @@ function MyApp({ Component, pageProps }) {
           description: "Full stack developer at Citi & at home.",
           images: [
             {
-              // url: "https://res.cloudinary.com/raskin-me/image/upload/v1647975577/raskin.me/images/FFE3A060-21CD-4BA9-9083-5477F7184C96_yrsvt5.jpg",
-              url: "/images/site/meta.jpg",
+              url: "https://res.cloudinary.com/raskin-me/image/upload/v1647987393/raskin.me/images/meta_image_s5dfw1.jpg",
               width: 800,
               height: 600,
               alt: "Perry Raskin",

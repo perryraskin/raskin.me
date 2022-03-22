@@ -16,7 +16,7 @@ export default function Home() {
         <h2 className="mt-12 mb-6 text-3xl font-black md:text-5xl">
           <span className="text-gray-400">Hi, I'm </span>Perry Raskin!
         </h2>
-        <div className="post-content mb-20">
+        <div className="post-content">
           <p className="text-lg text-gray-500">
             I'm a full stack developer at{" "}
             <a target="_blank" href="https://www.citi.com">
@@ -36,6 +36,9 @@ export default function Home() {
             </Link>
             .
           </p>
+        </div>
+        <div className="mt-8 mb-8 text-gray-200 text-center">
+          ________________________________
         </div>
         <Newsletter />
       </article>
