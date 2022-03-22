@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://raskin.me</loc>
+  </url>
+
+  <url>
     <loc>https://raskin.me/blog/beautify-code-in-your-next-js-blog</loc>
   </url>
 
@@ -15,22 +19,18 @@
   </url>
 
   <url>
-    <loc>https://raskin.me/about</loc>
+    <loc>https://raskin.me/projects/litedocs</loc>
   </url>
 
   <url>
-    <loc>https://raskin.me/blog</loc>
+    <loc>https://raskin.me/projects/recipejoiner</loc>
   </url>
 
   <url>
-    <loc>https://raskin.me/home</loc>
+    <loc>https://raskin.me/projects/trip-planner</loc>
   </url>
 
   <url>
-    <loc>https://raskin.me</loc>
-  </url>
-
-  <url>
-    <loc>https://raskin.me/projects</loc>
+    <loc>https://raskin.me/projects/twitter-telegram-bot</loc>
   </url>
 </urlset>
