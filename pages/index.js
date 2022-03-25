@@ -29,12 +29,11 @@ export default function Home() {
             CSS, and other modern front-end technologies.
           </p>
           <p className="text-lg text-gray-500">
-            Currently, I'm working on a dashboard for tracking online purchases
-            (in private beta). I'm also working on{" "}
-            <Link target="_blank" href="https://kano.today/">
-              <a>Kano</a>
-            </Link>
-            .
+            Currently, I'm working on{" "}
+            <a target="_blank" href="https://www.buyerdash.app">
+              BuyerDash
+            </a>
+            , a platform for tracking online purchases.
           </p>
         </div>
         <div className="mt-8 mb-8 text-gray-200 text-center">
