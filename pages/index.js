@@ -30,6 +30,11 @@ export default function Home() {
           </p>
           <p className="text-lg text-gray-500">
             Currently, I'm working on{" "}
+            <a target="_blank" href="https://www.inviteable.app">
+              Inviteable
+            </a>
+            , an event-planning tool for a gathering of any size (in person or
+            online). I'm also working on{" "}
             <a target="_blank" href="https://www.buyerdash.app">
               BuyerDash
             </a>
