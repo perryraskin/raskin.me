@@ -7,7 +7,7 @@ web:
 icon: https://raw.githubusercontent.com/perryraskin/lunch-mini/main/Lunch%20mini/Assets.xcassets/AppIcon.appiconset/Icon-1024.png
 ---
 
-![lunch-mini-screenshot](https://user-images.githubusercontent.com/17967465/176582065-2f111cf6-f253-4892-b828-d9197e70b02b.jpg)
+![lunch-mini-screenshot](https://user-images.githubusercontent.com/17967465/176724787-bfea45d5-93e4-49f4-ab91-99261a60b8aa.jpg)
 
 A mobile companion app for [Lunch Money](https://lunchmoney.app)!
 
