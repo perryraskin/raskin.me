@@ -10,4 +10,4 @@ icon: https://res.cloudinary.com/raskin-me/image/upload/v1647982481/raskin.me/im
 An app to help plan trips by offering a UI to compare trip components (e.g. hotel rooms).
 
 Trip Planner is open-source and
-the [code is available at Github](http://github.com/perryraskin/trip-planner).
+the [code is available at Github](https://github.com/perryraskin/trip-planner).
