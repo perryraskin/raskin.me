@@ -19,8 +19,8 @@ export default function Home() {
         <div className="post-content">
           <p className="text-lg text-gray-500">
             I'm a full stack developer at{" "}
-            <a target="_blank" href="https://www.citi.com">
-              Citi
+            <a target="_blank" href="https://www.coverdash.com">
+              Coverdash
             </a>
             .
           </p>

@@ -20,12 +20,12 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider defaultTheme="system" attribute="class" enableSystem={true}>
       <DefaultSeo
         title="Hi, I'm Perry Raskin!"
-        description="Full stack developer at Citi & at home."
+        description="Full stack developer at Coverdash & at home."
         canonical={canonicalUrl}
         openGraph={{
           site_name: "Hi, I'm Perry Raskin!",
           title: "Hi, I'm Perry Raskin!",
-          description: "Full stack developer at Citi & at home.",
+          description: "Full stack developer at Coverdash & at home.",
           images: [
             {
               url: "https://res.cloudinary.com/raskin-me/image/upload/v1647987393/raskin.me/images/meta_image_s5dfw1.jpg",
