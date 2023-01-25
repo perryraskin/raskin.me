@@ -18,7 +18,7 @@ export default function Home() {
         </h2>
         <div className="post-content">
           <p className="text-lg text-gray-500">
-            I'm a full stack developer at{" "}
+            I'm leading the Web & Integrations front at{" "}
             <a target="_blank" href="https://www.coverdash.com">
               Coverdash
             </a>
