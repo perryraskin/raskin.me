@@ -4,6 +4,8 @@ title: "Introducing AudioPen: AI-Powered Productivity Tool"
 date: 2023-06-04 03:00:00 +500
 categories: personal
 excerpt: Give yourself superpowers by trying it out
+link: https://audiopen.ai/?aff=Mq2RY
+image: https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fa7b19d7a245c07286533d7a21bca9acc.cdn.bubble.io%2Ff1683175506399x642153344571672700%2FThumbnail%2520New%2520May%25204.1.png?w=&amp;h=&amp;auto=compress&amp;dpr=1&amp;fit=max
 ---
 
 I'd like to introduce you to a tool I now use in both my work and personal life called AudioPen. This AI-powered tool records your voice and generates summaries of your thoughts, filtering out any stutters or unnecessary words. It's perfect for creating elegant emails, preparing voicemails, or taking notes during meetings.

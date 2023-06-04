@@ -5,19 +5,21 @@ import Newsletter from "./Newsletter";
 export default function PostContent({ post }) {
   return (
     <div className="inline-flex flex-col items-center justify-start w-full h-screen px-10 pt-10 pb-32 overflow-y-auto">
+      <div className="text-center text-gray-400 dark:text-gray-600">
+        {dayjs(post?.date.slice(0, 10)).format("MMMM D, YYYY")}
+      </div>
+      <h1 className="text-3xl mb-6 font-black md:text-4xl text-center max-w-[620px] mx-auto">
+        {post.title}
+      </h1>
       {post?.link && post?.image ? (
         <div className="max-w-[620px] mx-auto">
-          <img src={post.image} className="mb-4 rounded-lg" />
+          <a href={post?.link} target="_blank">
+            <img src={post.image} className="mb-6 rounded-lg" />
+          </a>
         </div>
       ) : (
         ""
       )}
-      <div className="text-center text-gray-400 dark:text-gray-600">
-        {dayjs(post?.date.slice(0, 10)).format("MMMM D, YYYY")}
-      </div>
-      <h1 className="text-3xl mb-10 font-black md:text-4xl text-center max-w-[620px] mx-auto">
-        {post.title}
-      </h1>
       <div
         dangerouslySetInnerHTML={{ __html: post?.content }}
         className="inline-block mx-auto post-content"
