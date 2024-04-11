@@ -3,7 +3,9 @@
   <url>
     <loc>https://raskin.me</loc>
   </url>
-
+<url>
+    <loc>https://raskin.me/blog/self-hosting-a-postgresql-database-on-a-raspberry-pi</loc>
+  </url>
 <url>
     <loc>https://raskin.me/blog/introducing-audiopen-ai-powered-productivity-tool</loc>
   </url>
